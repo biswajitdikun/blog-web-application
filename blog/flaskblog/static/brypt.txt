@@ -1,0 +1,11 @@
+from flask_bcrypt import Bcrypt
+>>> bcrypt=Bcrypt()
+>>> bcrypt.generate_password_hash('dog')
+b'$2b$12$f0z35bJBRvrddxLawPg5Y..z.m3Z.Y6f2u/SejVunrPB/HLEipv66'
+>>> bcrypt.generate_password_hash('dog').decode('utf_8')
+'$2b$12$Y8kFE93CpeD8Kzdh5HTyyusmvCJUrh6KRHRtnasn0d7D6GGdgKQbi'
+>>> bcrypt.generate_password_hash('dog').decode('utf_8')
+'$2b$12$Mg1dL2pW1lgomS4t90F8h.WVhQ3BhrDAj5yEN7L//nkJjOetmJJQ.'
+>>> has=bcrypt.generate_password_hash('dog').decode('utf_8')
+>>> bcrypt.check_password_hash(has,'dog')
+True

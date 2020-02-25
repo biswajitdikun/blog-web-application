@@ -1,0 +1,8 @@
+from flaskblog import db
+db.create_all()    #creates the database
+from flaskblog.models import User,Post
+u1=User(username='corey',email='c@gmail.com',password='password')
+db.session.add(u1)
+db.session.commit() 	
+User.query.all()
+User.query.filter_by(username='corey').all()
